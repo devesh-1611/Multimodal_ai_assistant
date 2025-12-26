@@ -24,7 +24,7 @@ if mode == "Text":
 #         st.image(generated_path, caption="Generated Image", width=600)
 
 elif mode == "Image Generation":
-    st.subheader("🖼 AI Image Generator")
+    st.subheader("AI Image Generator")
     prompt = st.text_input("Enter a prompt for image generation:")
 
     if prompt and st.button("Generate Image"):
@@ -39,7 +39,7 @@ elif mode == "Image Generation":
 
         # Add a download button
         st.download_button(
-            label="📥 Download Image",
+            label=" Download Image",
             data=image_bytes,
             file_name="generated_image.png",
             mime="image/png"
@@ -64,4 +64,5 @@ elif mode == "Audio":
         with open("temp_audio.mp3", "wb") as f:
             f.write(uploaded_audio.read())
         st.audio(uploaded_audio)
+
         st.write(analyze_audio("temp_audio.mp3", prompt or "Transcribe this audio."))
